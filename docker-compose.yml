@@ -1,0 +1,33 @@
+version: "3.8"
+services:
+  claude-code:
+    build:
+      context: .
+      args:
+        USER_ID: ${UID:-1000}
+        GROUP_ID: ${GID:-1000}
+    container_name: claude-code
+    tty: true
+    volumes:
+      - ./:/workspace
+    working_dir: /workspace
+    environment:
+      - USER_ID=${UID:-1000}
+      - GROUP_ID=${GID:-1000}
+
+  mkdocs:
+    build:
+      context: .
+      args:
+        USER_ID: ${UID:-1000}
+        GROUP_ID: ${GID:-1000}
+    container_name: uneme-docs
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/workspace
+    working_dir: /workspace
+    command: mkdocs serve --dev-addr=0.0.0.0:8000
+    environment:
+      - USER_ID=${UID:-1000}
+      - GROUP_ID=${GID:-1000} 

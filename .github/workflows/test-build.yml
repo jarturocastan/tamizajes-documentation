@@ -1,0 +1,103 @@
+name: Test Documentation Build
+
+on:
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  test-build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.9', '3.10', '3.11']
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Lint markdown files
+        run: |
+          # Install markdownlint if needed
+          if command -v markdownlint &> /dev/null; then
+            find docs -name "*.md" -exec markdownlint {} \;
+          else
+            echo "Markdownlint not available, skipping..."
+          fi
+
+      - name: Test MkDocs configuration
+        run: |
+          mkdocs build --verbose --strict
+
+      - name: Check for broken links
+        run: |
+          # Simple check for internal links
+          python -c "
+          import os
+          import re
+          
+          def check_markdown_links():
+              broken_links = []
+              docs_dir = 'docs'
+              
+              for root, dirs, files in os.walk(docs_dir):
+                  for file in files:
+                      if file.endswith('.md'):
+                          filepath = os.path.join(root, file)
+                          with open(filepath, 'r', encoding='utf-8') as f:
+                              content = f.read()
+                              
+                          # Find markdown links
+                          links = re.findall(r'\[([^\]]+)\]\(([^)]+)\)', content)
+                          for link_text, link_url in links:
+                              if link_url.startswith('./') or link_url.startswith('../'):
+                                  # Check if local file exists
+                                  target = os.path.normpath(os.path.join(os.path.dirname(filepath), link_url))
+                                  if not os.path.exists(target) and not os.path.exists(target + '.md'):
+                                      broken_links.append(f'{filepath}: {link_url}')
+              
+              if broken_links:
+                  print('❌ Broken internal links found:')
+                  for link in broken_links:
+                      print(f'  - {link}')
+                  exit(1)
+              else:
+                  print('✅ No broken internal links found')
+          
+          check_markdown_links()
+          "
+
+      - name: Generate build report
+        if: always()
+        run: |
+          echo "## Build Report for Python ${{ matrix.python-version }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ -d "site" ]; then
+            echo "✅ Documentation built successfully" >> $GITHUB_STEP_SUMMARY
+            echo "📊 Generated files: $(find site -type f | wc -l)" >> $GITHUB_STEP_SUMMARY
+            echo "📏 Total size: $(du -sh site | cut -f1)" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Documentation build failed" >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: Upload build artifacts (on failure)
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-logs-python-${{ matrix.python-version }}
+          path: |
+            mkdocs.log
+            site/
+          retention-days: 7

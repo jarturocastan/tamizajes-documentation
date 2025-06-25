@@ -1,0 +1,37 @@
+PREGUNTAS CRÍTICAS PARA EL CLIENTE - CENTRO DE SALUD MENTAL Y ADICCIONES
+
+=== OPERACIÓN DEL CENTRO ===
+1. ¿Cuáles son los horarios de atención? (días, horas)
+2. ¿Cuántos profesionales trabajan? (psicólogos, médicos, admin)
+3. ¿Qué tipos de citas manejan? (primera vez, seguimiento, grupal, individual)
+4. ¿Cuánto dura cada tipo de sesión? (30min, 1hr, etc.)
+5. ¿Tienen salas/consultorios limitados? (capacidad simultánea)
+
+=== TECNOLOGÍA ACTUAL ===
+6. ¿Qué sistema usan actualmente? (Excel, software médico, papel)
+7. ¿Tienen cuenta de GoHighLevel? (plan, configuración actual)
+8. ¿Qué número de WhatsApp usarían? (Business API o WhatsApp Business)
+9. ¿Usan Google Calendar actualmente? (personal/institucional)
+10. ¿Tienen algún CRM o base de datos? (integración necesaria)
+
+=== PROCESOS ESPECÍFICOS ===
+11. ¿Cómo llegan los pacientes actualmente? (referencias, walk-in, llamadas)
+12. ¿Quién hace las citas actualmente? (recepcionista, cada profesional)
+13. ¿Permiten reprogramación? ¿Con cuánto tiempo?
+14. ¿Cobran por no presentarse? (políticas de cancelación)
+15. ¿Hacen seguimiento post-alta? (recordatorios, evaluaciones)
+
+=== REPORTES Y COMPLIANCE ===
+16. ¿Qué reportes necesitan generar? (mensuales, anuales, gobierno)
+17. ¿Tienen auditorías de salud? (NOM, certificaciones)
+18. ¿Dónde almacenan expedientes? (físico, digital, cloud)
+
+=== PRESUPUESTO Y OBJETIVOS ===
+19. ¿Cuál es el presupuesto para el proyecto?
+20. ¿Cuántos pacientes atienden al mes? (volumen actual/esperado)
+21. ¿Cuál es el objetivo principal? (eficiencia, más pacientes, menos admin)
+
+=== URGENCIAS Y RESTRICCIONES ===
+22. ¿Manejan emergencias/crisis? (protocolo especial)
+23. ¿Hay restricciones legales específicas? (LOPD, NOM-025, etc.)
+24. ¿Fecha límite de implementación?

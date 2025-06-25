@@ -1,0 +1,107 @@
+site_name: Sistema UNEME-CECOSAMA - Documentación Técnica
+site_description: Sistema integrado de automatización para Centro de Salud Mental y Adicciones
+site_author: Arquitecto de Software
+site_url: https://uneme-cecosama-docs.github.io
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.share
+    - toc.integrate
+    - content.code.annotate
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - tables
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+  - mermaid2
+
+nav:
+  - Inicio: index.md
+  - Arquitectura:
+    - Visión General: arquitectura/vision-general.md
+    - Flujo de Datos: arquitectura/flujo-datos.md
+    - Integraciones: arquitectura/integraciones.md
+  - GoHighLevel:
+    - Configuración: gohighlevel/configuracion.md
+    - Pipelines: gohighlevel/pipelines.md
+    - Automatizaciones: gohighlevel/automatizaciones.md
+    - Campos Personalizados: gohighlevel/campos-personalizados.md
+  - WhatsApp:
+    - Configuración Bot: whatsapp/bot-setup.md
+    - Flujos de Conversación: whatsapp/flujos-conversacion.md
+    - Formularios Digitales: whatsapp/formularios-digitales.md
+    - Escalación Humana: whatsapp/escalacion-humana.md
+  - Google Calendar:
+    - Integración GHL: google-calendar/integracion-ghl.md
+    - Tipos de Citas: google-calendar/tipos-citas.md
+    - Sincronización: google-calendar/sincronizacion.md
+  - Procesos:
+    - Admisión de Paciente: procesos/admision-paciente.md
+    - Gestión de Citas: procesos/gestion-citas.md
+    - Seguimiento: procesos/seguimiento.md
+    - Alta de Paciente: procesos/alta-paciente.md
+  - Formularios:
+    - Preconsulta: formularios/preconsulta.md
+    - PHQ-9: formularios/phq9.md
+    - AUDIT: formularios/audit.md
+    - Otros Instrumentos: formularios/otros-instrumentos.md
+  - Compliance:
+    - Privacidad de Datos: compliance/privacidad-datos.md
+    - Reportes: compliance/reportes.md
+    - Auditoría: compliance/auditoria.md
+  - Implementación:
+    - Fases del Proyecto: implementacion/fases-proyecto.md
+    - Requisitos Técnicos: implementacion/requisitos-tecnicos.md
+    - Capacitación: implementacion/capacitacion.md
+    - Testing: implementacion/testing.md
+  - Mantenimiento:
+    - Monitoreo: mantenimiento/monitoreo.md
+    - Troubleshooting: mantenimiento/troubleshooting.md
+    - Actualizaciones: mantenimiento/actualizaciones.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/uneme-cecosama
+    - icon: fontawesome/solid/envelope
+      link: mailto:soporte@uneme-cecosama.gob.mx
+
+copyright: Copyright &copy; 2024 UNEME-CECOSAMA. Todos los derechos reservados.

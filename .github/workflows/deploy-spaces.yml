@@ -1,0 +1,111 @@
+name: Deploy to DigitalOcean Spaces
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+env:
+  SPACES_BUCKET: uneme-docs
+  SPACES_REGION: nyc3
+  SPACES_ENDPOINT: https://nyc3.digitaloceanspaces.com
+
+jobs:
+  deploy-to-spaces:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install s3cmd
+
+      - name: Build documentation
+        run: |
+          mkdocs build --clean --verbose
+
+      - name: Configure s3cmd
+        run: |
+          cat > ~/.s3cfg << EOF
+          [default]
+          access_key = ${{ secrets.SPACES_ACCESS_KEY }}
+          secret_key = ${{ secrets.SPACES_SECRET_KEY }}
+          host_base = ${{ env.SPACES_REGION }}.digitaloceanspaces.com
+          host_bucket = %(bucket)s.${{ env.SPACES_REGION }}.digitaloceanspaces.com
+          bucket_location = ${{ env.SPACES_REGION }}
+          use_https = True
+          signature_v2 = False
+          EOF
+
+      - name: Sync to DigitalOcean Spaces
+        run: |
+          # Upload files with proper MIME types and caching
+          s3cmd sync site/ s3://${{ env.SPACES_BUCKET }}/ \
+            --acl-public \
+            --delete-removed \
+            --guess-mime-type \
+            --no-mime-magic \
+            --add-header="Cache-Control:public, max-age=31536000" \
+            --add-header="X-Robots-Tag:noindex" \
+            --exclude="*.tmp" \
+            --exclude=".DS_Store"
+
+      - name: Set correct MIME types
+        run: |
+          # Fix MIME types for specific files
+          s3cmd modify s3://${{ env.SPACES_BUCKET }}/ \
+            --add-header="Content-Type:text/html" \
+            --recursive \
+            --include="*.html"
+          
+          s3cmd modify s3://${{ env.SPACES_BUCKET }}/ \
+            --add-header="Content-Type:text/css" \
+            --recursive \
+            --include="*.css"
+          
+          s3cmd modify s3://${{ env.SPACES_BUCKET }}/ \
+            --add-header="Content-Type:application/javascript" \
+            --recursive \
+            --include="*.js"
+
+      - name: Invalidate CDN cache
+        run: |
+          # Install doctl
+          curl -sL https://github.com/digitalocean/doctl/releases/download/v1.92.0/doctl-1.92.0-linux-amd64.tar.gz | tar -xzv
+          sudo mv doctl /usr/local/bin
+          
+          # Authenticate
+          echo "${{ secrets.DO_ACCESS_TOKEN }}" | doctl auth init --access-token-stdin
+          
+          # Invalidate CDN (if configured)
+          # doctl compute cdn flush ${{ secrets.CDN_ID }} --files "*"
+
+      - name: Deploy status
+        run: |
+          echo "✅ Documentation deployed to DigitalOcean Spaces"
+          echo "🌐 URL: https://${{ env.SPACES_BUCKET }}.${{ env.SPACES_REGION }}.digitaloceanspaces.com/"
+          echo "📊 Files uploaded: $(find site -type f | wc -l)"
+          echo "📏 Total size: $(du -sh site | cut -f1)"
+
+      - name: Test deployment
+        run: |
+          # Test if site is accessible
+          SITE_URL="https://${{ env.SPACES_BUCKET }}.${{ env.SPACES_REGION }}.digitaloceanspaces.com/"
+          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$SITE_URL")
+          
+          if [ "$HTTP_STATUS" = "200" ]; then
+            echo "✅ Site is accessible: $SITE_URL"
+          else
+            echo "❌ Site not accessible. HTTP Status: $HTTP_STATUS"
+            exit 1
+          fi

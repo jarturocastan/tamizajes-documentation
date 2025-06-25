@@ -1,0 +1,189 @@
+PROMPT PARA GENERACIÓN DE DOCUMENTACIÓN TÉCNICA - SISTEMA INTEGRADO UNEME-CECOSAMA
+
+# CONTEXTO DEL PROYECTO
+
+Eres un arquitecto de software especializado en documentación técnica. Debes crear una documentación completa usando MkDocs para un sistema integrado que automatizará los procesos de un Centro de Salud Mental y Adicciones (UNEME-CECOSAMA).
+
+## ANÁLISIS PREVIO REALIZADO
+
+En la carpeta `/workspace/files` encontrarás documentos convertidos a markdown (.md) que contienen:
+
+1. **PRECONSULTA.docx.md** - Formulario de admisión inicial
+2. **Entrevista Exploratoria.docx.md** - Evaluación completa del paciente
+3. **Cuestionario PHQ-9.docx.md** - Escala de depresión
+4. **AUDIT.docx.md** - Evaluación de alcoholismo
+5. **FICHA DE IDENTIFICACIÓN.xlsx - Hoja1.csv** - Datos del paciente
+6. Múltiples escalas de evaluación psicológica y formularios clínicos
+
+## STACK TECNOLÓGICO DEFINIDO
+
+### Plataformas Principales:
+- **GoHighLevel**: CRM principal, gestión de contactos, automatizaciones
+- **WhatsApp Business API**: Comunicación bidireccional con pacientes
+- **Google Calendar**: Gestión de citas integrada con GoHighLevel
+- **MkDocs**: Documentación técnica del proyecto
+
+### Flujo de Integración:
+1. **GoHighLevel** maneja el pipeline de pacientes y automatizaciones
+2. **Google Calendar** se sincroniza con GoHighLevel para gestión de citas
+3. **WhatsApp** notifica automáticamente a pacientes y staff
+4. Los pacientes pueden **agendar citas via WhatsApp** que se reflejan en GoHighLevel/Google Calendar
+
+## FUNCIONALIDADES CORE DEL SISTEMA
+
+### 1. Gestión de Citas Automatizada
+- Agendamiento via WhatsApp con validación de disponibilidad
+- Sincronización bidireccional GoHighLevel ↔ Google Calendar
+- Notificaciones automáticas (confirmación, recordatorios, cambios)
+- Reprogramación via WhatsApp con confirmación del staff
+
+### 2. Flujos de Comunicación WhatsApp
+- **Bienvenida**: Primer contacto y explicación del proceso
+- **Preconsulta Digital**: Formularios via WhatsApp (PHQ-9, datos básicos)
+- **Recordatorios**: 24h antes, 2h antes de cita
+- **Seguimiento**: Post-sesión, evaluaciones, alta del tratamiento
+- **Emergencias**: Protocolo de crisis y derivación urgente
+
+### 3. Pipeline de Pacientes en GoHighLevel
+- **Lead**: Primer contacto via WhatsApp
+- **Preconsulta**: Formularios completados
+- **Primera Cita**: Agendada y confirmada
+- **En Tratamiento**: Sesiones regulares programadas
+- **Seguimiento**: Post-alta, evaluaciones periódicas
+- **Inactivo**: Pacientes que abandonaron tratamiento
+
+### 4. Automatizaciones Críticas
+- Auto-respuestas inteligentes en WhatsApp
+- Escalación a staff humano según palabras clave
+- Envío automático de formularios según etapa del paciente
+- Reportes automáticos para compliance y auditorías
+
+## ARQUITECTURA DEL SISTEMA
+
+```
+┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
+│   PACIENTE      │◄──►│   WHATSAPP BOT   │◄──►│  GOHIGHLEVEL    │
+│                 │    │                  │    │                 │
+└─────────────────┘    └──────────────────┘    └─────────────────┘
+                                ▲                        ▲
+                                │                        │
+                                ▼                        ▼
+┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
+│  GOOGLE CAL     │◄──►│   WEBHOOKS/API   │◄──►│  FORMULARIOS    │
+│                 │    │                  │    │  DIGITALES      │
+└─────────────────┘    └──────────────────┘    └─────────────────┘
+```
+
+## REQUISITOS PARA LA DOCUMENTACIÓN
+
+### Debes crear una documentación MkDocs con la siguiente estructura:
+
+```
+docs/
+├── index.md                          # Introducción y overview
+├── arquitectura/
+│   ├── vision-general.md             # Arquitectura del sistema
+│   ├── flujo-datos.md                # Flujo de información
+│   └── integraciones.md              # APIs y conexiones
+├── gohighlevel/
+│   ├── configuracion.md              # Setup inicial GHL
+│   ├── pipelines.md                  # Configuración de pipelines
+│   ├── automatizaciones.md           # Workflows y triggers
+│   └── campos-personalizados.md      # Custom fields necesarios
+├── whatsapp/
+│   ├── bot-setup.md                  # Configuración WhatsApp Business API
+│   ├── flujos-conversacion.md        # Scripts y respuestas automáticas
+│   ├── formularios-digitales.md      # Implementación de cuestionarios
+│   └── escalacion-humana.md          # Cuándo derivar a staff
+├── google-calendar/
+│   ├── integracion-ghl.md            # Conexión con GoHighLevel
+│   ├── tipos-citas.md                # Configuración de eventos
+│   └── sincronizacion.md             # Mantener datos actualizados
+├── procesos/
+│   ├── admision-paciente.md          # Flujo completo desde contacto inicial
+│   ├── gestion-citas.md              # Agendar, modificar, cancelar
+│   ├── seguimiento.md                # Proceso post-sesión
+│   └── alta-paciente.md              # Finalización del tratamiento
+├── formularios/
+│   ├── preconsulta.md                # Digitalización del formulario
+│   ├── phq9.md                       # Cuestionario de depresión
+│   ├── audit.md                      # Evaluación de alcoholismo
+│   └── otros-instrumentos.md         # Resto de escalas
+├── compliance/
+│   ├── privacidad-datos.md           # RGPD y manejo de información médica
+│   ├── reportes.md                   # Generación automática de reportes
+│   └── auditoria.md                  # Logs y trazabilidad
+├── implementacion/
+│   ├── fases-proyecto.md             # Roadmap de implementación
+│   ├── requisitos-tecnicos.md        # Hardware, software, accesos
+│   ├── capacitacion.md               # Training del personal
+│   └── testing.md                    # Pruebas y validación
+└── mantenimiento/
+    ├── monitoreo.md                  # Supervisión del sistema
+    ├── troubleshooting.md            # Resolución de problemas comunes
+    └── actualizaciones.md            # Proceso de updates
+
+mkdocs.yml                            # Configuración MkDocs
+```
+
+## INSTRUCCIONES ESPECÍFICAS
+
+### 1. Análisis de Documentos Fuente
+- **DEBES** leer todos los archivos .md en `/workspace/files`
+- Extrae los campos específicos de cada formulario
+- Identifica las reglas de negocio implícitas
+- Mapea los flujos de decisión (ej: AUDIT > 8 puntos = derivación)
+
+### 2. Especificaciones Técnicas Detalladas
+- Define **exactamente** qué campos de GoHighLevel necesitas crear
+- Especifica los **triggers** y **actions** de cada automatización
+- Detalla los **webhooks** necesarios para sincronización
+- Incluye **ejemplos de código** donde sea relevante
+
+### 3. Flujos de WhatsApp Detallados
+- Crea **scripts completos** de conversación
+- Define **palabras clave** para escalación automática
+- Especifica **validaciones** de entrada de usuario
+- Incluye manejo de **errores** y **casos edge**
+
+### 4. Implementación Práctica
+- Incluye **screenshots** placeholder donde irían capturas de pantalla
+- Proporciona **checklists** paso a paso
+- Define **criterios de aceptación** para cada funcionalidad
+- Incluye **métricas** de éxito y KPIs
+
+### 5. Consideraciones Especiales
+- **Emergencias**: Protocolo cuando paciente menciona crisis/suicidio
+- **Menores**: Adaptaciones para pacientes adolescentes
+- **Compliance médico**: Cumplimiento de regulaciones mexicanas
+- **Escalabilidad**: Sistema debe manejar crecimiento de pacientes
+
+## INFORMACIÓN PENDIENTE DE COMPLETAR
+
+Marca claramente en la documentación los siguientes puntos como **[PENDIENTE - VALIDAR CON CLIENTE]**:
+
+- Horarios específicos de atención
+- Número de profesionales y especialidades
+- Duración de diferentes tipos de sesión
+- Políticas de cancelación y reprogramación
+- Presupuesto y timeline del proyecto
+- Integraciones con sistemas existentes
+- Reportes específicos requeridos
+
+## ENTREGABLES ESPERADOS
+
+1. **Documentación completa en MkDocs** siguiendo la estructura definida
+2. **mkdocs.yml** configurado con tema profesional y navegación clara
+3. **Diagramas de flujo** en Mermaid para procesos críticos
+4. **Tablas de configuración** detalladas para cada plataforma
+5. **Guías de implementación** paso a paso
+6. **Protocolos de emergencia** y escalación
+
+## TONE Y ESTILO
+
+- **Técnico pero accesible**: El personal médico debe entender la implementación
+- **Específico**: Evita generalidades, incluye detalles exactos
+- **Orientado a la acción**: Cada sección debe terminar con pasos concretos
+- **Compliance-first**: Siempre considera privacidad y regulaciones médicas
+
+**COMENZAR INMEDIATAMENTE** con la creación de la estructura de carpetas y el primer borrador de documentación. Si encuentras información faltante en los archivos fuente, márcala claramente para completar posteriormente.

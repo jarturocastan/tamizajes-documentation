@@ -1,0 +1,1529 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Sistema integrado de automatización para Centro de Salud Mental y Adicciones" name="description"/>
+<meta content="Arquitecto de Software" name="author"/>
+<link href="https://uneme-cecosama-docs.github.io/implementacion/fases-proyecto/" rel="canonical"/>
+<link href="../../compliance/privacidad-datos/" rel="prev"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.14" name="generator"/>
+<title>Fases del Proyecto - Sistema UNEME-CECOSAMA - Documentación Técnica</title>
+<link href="../../assets/stylesheets/main.342714a4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="cyan" data-md-color-primary="teal" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#fases-del-proyecto-roadmap-de-implementacion">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Sistema UNEME-CECOSAMA - Documentación Técnica" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Sistema UNEME-CECOSAMA - Documentación Técnica">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Sistema UNEME-CECOSAMA - Documentación Técnica
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Fases del Proyecto
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="cyan" data-md-color-media="" data-md-color-primary="teal" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="cyan" data-md-color-media="" data-md-color-primary="teal" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<a aria-label="Share" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="Share">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../arquitectura/vision-general/">
+          
+  
+  
+  Arquitectura
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../gohighlevel/configuracion/">
+          
+  
+  
+  GoHighLevel
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../whatsapp/bot-setup.md">
+          
+  
+  
+  WhatsApp
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../google-calendar/integracion-ghl.md">
+          
+  
+  
+  Google Calendar
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../procesos/admision-paciente/">
+          
+  
+  
+  Procesos
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../formularios/preconsulta/">
+          
+  
+  
+  Formularios
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../compliance/privacidad-datos/">
+          
+  
+  
+  Compliance
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="./">
+          
+  
+  
+  Implementación
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../mantenimiento/monitoreo.md">
+          
+  
+  
+  Mantenimiento
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Sistema UNEME-CECOSAMA - Documentación Técnica" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Sistema UNEME-CECOSAMA - Documentación Técnica">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Sistema UNEME-CECOSAMA - Documentación Técnica
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Inicio
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Arquitectura
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            Arquitectura
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../arquitectura/vision-general/">
+<span class="md-ellipsis">
+    Visión General
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../arquitectura/flujo-datos.md">
+<span class="md-ellipsis">
+    Flujo de Datos
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../arquitectura/integraciones.md">
+<span class="md-ellipsis">
+    Integraciones
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    GoHighLevel
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            GoHighLevel
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gohighlevel/configuracion/">
+<span class="md-ellipsis">
+    Configuración
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gohighlevel/pipelines.md">
+<span class="md-ellipsis">
+    Pipelines
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gohighlevel/automatizaciones.md">
+<span class="md-ellipsis">
+    Automatizaciones
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../gohighlevel/campos-personalizados.md">
+<span class="md-ellipsis">
+    Campos Personalizados
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    WhatsApp
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            WhatsApp
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../whatsapp/bot-setup.md">
+<span class="md-ellipsis">
+    Configuración Bot
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../whatsapp/flujos-conversacion/">
+<span class="md-ellipsis">
+    Flujos de Conversación
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../whatsapp/formularios-digitales.md">
+<span class="md-ellipsis">
+    Formularios Digitales
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../whatsapp/escalacion-humana.md">
+<span class="md-ellipsis">
+    Escalación Humana
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    Google Calendar
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            Google Calendar
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../google-calendar/integracion-ghl.md">
+<span class="md-ellipsis">
+    Integración GHL
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../google-calendar/tipos-citas.md">
+<span class="md-ellipsis">
+    Tipos de Citas
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../google-calendar/sincronizacion.md">
+<span class="md-ellipsis">
+    Sincronización
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-ellipsis">
+    Procesos
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            Procesos
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../procesos/admision-paciente/">
+<span class="md-ellipsis">
+    Admisión de Paciente
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../procesos/gestion-citas.md">
+<span class="md-ellipsis">
+    Gestión de Citas
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../procesos/seguimiento.md">
+<span class="md-ellipsis">
+    Seguimiento
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../procesos/alta-paciente.md">
+<span class="md-ellipsis">
+    Alta de Paciente
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-ellipsis">
+    Formularios
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            Formularios
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../formularios/preconsulta/">
+<span class="md-ellipsis">
+    Preconsulta
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../formularios/phq9/">
+<span class="md-ellipsis">
+    PHQ-9
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../formularios/audit/">
+<span class="md-ellipsis">
+    AUDIT
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../formularios/otros-instrumentos.md">
+<span class="md-ellipsis">
+    Otros Instrumentos
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+<span class="md-ellipsis">
+    Compliance
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+            Compliance
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../compliance/privacidad-datos/">
+<span class="md-ellipsis">
+    Privacidad de Datos
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../compliance/reportes.md">
+<span class="md-ellipsis">
+    Reportes
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../compliance/auditoria.md">
+<span class="md-ellipsis">
+    Auditoría
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+<span class="md-ellipsis">
+    Implementación
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_9_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_9">
+<span class="md-nav__icon md-icon"></span>
+            Implementación
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Fases del Proyecto
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Fases del Proyecto
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduccion">
+<span class="md-ellipsis">
+      Introducción
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vision-general-de-fases">
+<span class="md-ellipsis">
+      Visión General de Fases
+    </span>
+</a>
+<nav aria-label="Visión General de Fases" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cronograma-general">
+<span class="md-ellipsis">
+      📊 Cronograma General
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fase-1-fundacion-digital-4-semanas">
+<span class="md-ellipsis">
+      Fase 1: Fundación Digital (4 semanas)
+    </span>
+</a>
+<nav aria-label="Fase 1: Fundación Digital (4 semanas)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#objetivo-principal">
+<span class="md-ellipsis">
+      🎯 Objetivo Principal
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#entregables-clave">
+<span class="md-ellipsis">
+      📋 Entregables Clave
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metricas-de-exito-fase-1">
+<span class="md-ellipsis">
+      📊 Métricas de Éxito Fase 1
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fase-2-automatizacion-inteligente-4-semanas">
+<span class="md-ellipsis">
+      Fase 2: Automatización Inteligente (4 semanas)
+    </span>
+</a>
+<nav aria-label="Fase 2: Automatización Inteligente (4 semanas)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#objetivo-principal_1">
+<span class="md-ellipsis">
+      🎯 Objetivo Principal
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#entregables-clave_1">
+<span class="md-ellipsis">
+      📋 Entregables Clave
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metricas-de-exito-fase-2">
+<span class="md-ellipsis">
+      📊 Métricas de Éxito Fase 2
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fase-3-inteligencia-del-sistema-4-semanas">
+<span class="md-ellipsis">
+      Fase 3: Inteligencia del Sistema (4 semanas)
+    </span>
+</a>
+<nav aria-label="Fase 3: Inteligencia del Sistema (4 semanas)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#objetivo-principal_2">
+<span class="md-ellipsis">
+      🎯 Objetivo Principal
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#entregables-clave_2">
+<span class="md-ellipsis">
+      📋 Entregables Clave
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metricas-de-exito-fase-3">
+<span class="md-ellipsis">
+      📊 Métricas de Éxito Fase 3
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fase-4-optimizacion-y-lanzamiento-5-semanas">
+<span class="md-ellipsis">
+      Fase 4: Optimización y Lanzamiento (5 semanas)
+    </span>
+</a>
+<nav aria-label="Fase 4: Optimización y Lanzamiento (5 semanas)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#objetivo-principal_3">
+<span class="md-ellipsis">
+      🎯 Objetivo Principal
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#entregables-clave_3">
+<span class="md-ellipsis">
+      📋 Entregables Clave
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metricas-de-exito-fase-4">
+<span class="md-ellipsis">
+      📊 Métricas de Éxito Fase 4
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#recursos-y-personal-requerido">
+<span class="md-ellipsis">
+      Recursos y Personal Requerido
+    </span>
+</a>
+<nav aria-label="Recursos y Personal Requerido" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#equipo-de-implementacion">
+<span class="md-ellipsis">
+      👥 Equipo de Implementación
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#presupuesto-estimado">
+<span class="md-ellipsis">
+      💰 Presupuesto Estimado
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#riesgos-y-mitigaciones">
+<span class="md-ellipsis">
+      Riesgos y Mitigaciones
+    </span>
+</a>
+<nav aria-label="Riesgos y Mitigaciones" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#riesgos-tecnicos">
+<span class="md-ellipsis">
+      ⚠️ Riesgos Técnicos
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#riesgos-operacionales">
+<span class="md-ellipsis">
+      🏥 Riesgos Operacionales
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#criterios-de-exito-del-proyecto">
+<span class="md-ellipsis">
+      Criterios de Éxito del Proyecto
+    </span>
+</a>
+<nav aria-label="Criterios de Éxito del Proyecto" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#objetivos-cuantitativos">
+<span class="md-ellipsis">
+      🎯 Objetivos Cuantitativos
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#objetivos-cualitativos">
+<span class="md-ellipsis">
+      🏆 Objetivos Cualitativos
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#checklist-de-preparacion">
+<span class="md-ellipsis">
+      Checklist de Preparación
+    </span>
+</a>
+<nav aria-label="Checklist de Preparación" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pre-requisitos-tecnicos">
+<span class="md-ellipsis">
+      ✅ Pre-Requisitos Técnicos
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pre-requisitos-organizacionales">
+<span class="md-ellipsis">
+      ✅ Pre-Requisitos Organizacionales
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pre-requisitos-legales">
+<span class="md-ellipsis">
+      ✅ Pre-Requisitos Legales
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../requisitos-tecnicos.md">
+<span class="md-ellipsis">
+    Requisitos Técnicos
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../capacitacion.md">
+<span class="md-ellipsis">
+    Capacitación
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../testing.md">
+<span class="md-ellipsis">
+    Testing
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+<span class="md-ellipsis">
+    Mantenimiento
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_10_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_10">
+<span class="md-nav__icon md-icon"></span>
+            Mantenimiento
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../mantenimiento/monitoreo.md">
+<span class="md-ellipsis">
+    Monitoreo
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../mantenimiento/troubleshooting.md">
+<span class="md-ellipsis">
+    Troubleshooting
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../mantenimiento/actualizaciones.md">
+<span class="md-ellipsis">
+    Actualizaciones
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="fases-del-proyecto-roadmap-de-implementacion">Fases del Proyecto - Roadmap de Implementación<a class="headerlink" href="#fases-del-proyecto-roadmap-de-implementacion" title="Permanent link">¶</a></h1>
+<h2 id="introduccion">Introducción<a class="headerlink" href="#introduccion" title="Permanent link">¶</a></h2>
+<p>La implementación del Sistema Integrado UNEME-CECOSAMA se realizará en 4 fases progresivas, cada una construyendo sobre la anterior para minimizar riesgos y maximizar la adopción exitosa por parte del equipo médico.</p>
+<h2 id="vision-general-de-fases">Visión General de Fases<a class="headerlink" href="#vision-general-de-fases" title="Permanent link">¶</a></h2>
+<h3 id="cronograma-general">📊 Cronograma General<a class="headerlink" href="#cronograma-general" title="Permanent link">¶</a></h3>
+<pre class="mermaid"><code>gantt
+    title Roadmap de Implementación UNEME-CECOSAMA
+    dateFormat  YYYY-MM-DD
+    section Fase 1 - Fundación
+    Configuración GoHighLevel     :2024-01-01, 2w
+    Formularios Digitales         :2024-01-08, 2w
+    Integración WhatsApp          :2024-01-15, 1w
+    Testing Básico               :2024-01-22, 1w
+
+    section Fase 2 - Automatización
+    Workflows GoHighLevel        :2024-02-01, 2w
+    Bot WhatsApp Completo        :2024-02-08, 2w
+    Sistema de Alertas           :2024-02-15, 1w
+    Testing Integración          :2024-02-22, 1w
+
+    section Fase 3 - Inteligencia
+    Google Calendar Sync         :2024-03-01, 2w
+    Evaluación Automática        :2024-03-08, 2w
+    Reportes y Analytics         :2024-03-15, 1w
+    Testing Completo             :2024-03-22, 1w
+
+    section Fase 4 - Optimización
+    Capacitación Personal        :2024-04-01, 2w
+    Piloto con Pacientes         :2024-04-08, 4w
+    Optimizaciones               :2024-05-06, 2w
+    Lanzamiento Completo         :2024-05-20, 1w</code></pre>
+<h2 id="fase-1-fundacion-digital-4-semanas">Fase 1: Fundación Digital (4 semanas)<a class="headerlink" href="#fase-1-fundacion-digital-4-semanas" title="Permanent link">¶</a></h2>
+<h3 id="objetivo-principal">🎯 Objetivo Principal<a class="headerlink" href="#objetivo-principal" title="Permanent link">¶</a></h3>
+<p>Establecer la infraestructura básica del sistema y los primeros componentes funcionales.</p>
+<h3 id="entregables-clave">📋 Entregables Clave<a class="headerlink" href="#entregables-clave" title="Permanent link">¶</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Semana 1-2: Configuración GoHighLevel</label><label for="__tabbed_1_2">Semana 2-3: Formularios Digitales</label><label for="__tabbed_1_3">Semana 3-4: Integración WhatsApp</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong>Tareas</strong>:
+- [ ] Crear sub-cuenta UNEME-CECOSAMA
+- [ ] Configurar usuarios y roles de acceso
+- [ ] Implementar custom fields para datos clínicos
+- [ ] Configurar pipeline básico de pacientes
+- [ ] Crear sistema de tags y categorización</p>
+<p><strong>Criterios de Aceptación</strong>:
+- ✅ 5 usuarios del equipo médico con acceso configurado
+- ✅ Pipeline con 6 etapas principales funcionando
+- ✅ 25+ custom fields para datos clínicos implementados
+- ✅ Sistema de tags operativo y documentado</p>
+</div>
+<div class="tabbed-block">
+<p><strong>Tareas</strong>:
+- [ ] Desarrollar formulario de Preconsulta responsive
+- [ ] Implementar cuestionario PHQ-9 interactivo
+- [ ] Crear formulario AUDIT digital
+- [ ] Configurar validaciones en tiempo real
+- [ ] Integrar envío de datos a GoHighLevel</p>
+<p><strong>Criterios de Aceptación</strong>:
+- ✅ Formularios funcionan perfectamente en móviles
+- ✅ Validaciones previenen errores de captura
+- ✅ Datos se sincronizan automáticamente con GHL
+- ✅ Tiempo de llenado &lt; 5 minutos por formulario</p>
+</div>
+<div class="tabbed-block">
+<p><strong>Tareas</strong>:
+- [ ] Configurar WhatsApp Business API
+- [ ] Implementar webhooks bidireccionales
+- [ ] Crear mensajes de bienvenida automáticos
+- [ ] Configurar envío automático de formularios
+- [ ] Testing básico de flujo de comunicación</p>
+<p><strong>Criterios de Aceptación</strong>:
+- ✅ Bot responde en &lt; 30 segundos
+- ✅ Formularios se envían automáticamente
+- ✅ Datos de WhatsApp se sincronizan con GHL
+- ✅ Mensajes automáticos funcionan 24/7</p>
+</div>
+</div>
+</input></input></input></div>
+<h3 id="metricas-de-exito-fase-1">📊 Métricas de Éxito Fase 1<a class="headerlink" href="#metricas-de-exito-fase-1" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Métrica</th>
+<th>Objetivo</th>
+<th>Método de Validación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Setup GoHighLevel</strong></td>
+<td>100% funcional</td>
+<td>Testing de todos los workflows</td>
+</tr>
+<tr>
+<td><strong>Formularios Móviles</strong></td>
+<td>&gt; 95% compatibilidad</td>
+<td>Testing en 10+ dispositivos</td>
+</tr>
+<tr>
+<td><strong>WhatsApp Response</strong></td>
+<td>&lt; 30 segundos</td>
+<td>Testing automatizado 24/7</td>
+</tr>
+<tr>
+<td><strong>Sincronización Datos</strong></td>
+<td>100% precisión</td>
+<td>Validación manual de 50 casos</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fase-2-automatizacion-inteligente-4-semanas">Fase 2: Automatización Inteligente (4 semanas)<a class="headerlink" href="#fase-2-automatizacion-inteligente-4-semanas" title="Permanent link">¶</a></h2>
+<h3 id="objetivo-principal_1">🎯 Objetivo Principal<a class="headerlink" href="#objetivo-principal_1" title="Permanent link">¶</a></h3>
+<p>Implementar la lógica de automatización que permita al sistema tomar decisiones inteligentes basadas en la información de los pacientes.</p>
+<h3 id="entregables-clave_1">📋 Entregables Clave<a class="headerlink" href="#entregables-clave_1" title="Permanent link">¶</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Semana 5-6: Workflows GoHighLevel</label><label for="__tabbed_2_2">Semana 6-7: Bot WhatsApp Completo</label><label for="__tabbed_2_3">Semana 7-8: Sistema de Alertas</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong>Tareas</strong>:
+- [ ] Crear workflow de nuevo paciente
+- [ ] Implementar automatización de seguimientos
+- [ ] Configurar triggers para alertas médicas
+- [ ] Desarrollar workflow de asignación automática
+- [ ] Crear automatizaciones de recordatorios</p>
+<p><strong>Criterios de Aceptación</strong>:
+- ✅ 5 workflows principales funcionando automáticamente
+- ✅ Asignación de profesionales 90% automatizada
+- ✅ Seguimientos automáticos sin intervención humana
+- ✅ Alertas médicas se envían en &lt; 5 minutos</p>
+</div>
+<div class="tabbed-block">
+<p><strong>Tareas</strong>:
+- [ ] Implementar reconocimiento de intenciones
+- [ ] Crear flujos conversacionales completos
+- [ ] Configurar respuestas contextuales
+- [ ] Implementar escalación automática a humanos
+- [ ] Crear manejo de casos especiales</p>
+<p><strong>Criterios de Aceptación</strong>:
+- ✅ Bot maneja 80% de consultas sin escalación
+- ✅ Reconoce 15+ intenciones diferentes
+- ✅ Escalación funciona en casos críticos
+- ✅ Conversaciones naturales y fluidas</p>
+</div>
+<div class="tabbed-block">
+<p><strong>Tareas</strong>:
+- [ ] Implementar detección automática de crisis
+- [ ] Configurar alertas por PHQ-9 alto
+- [ ] Crear protocolo de riesgo suicida
+- [ ] Implementar notificaciones al equipo médico
+- [ ] Configurar logs de auditoría</p>
+<p><strong>Criterios de Aceptación</strong>:
+- ✅ 100% de casos críticos generan alerta
+- ✅ Equipo médico notificado en &lt; 15 minutos
+- ✅ Protocolo de crisis funciona 24/7
+- ✅ Zero falsos negativos en detección de riesgo</p>
+</div>
+</div>
+</input></input></input></div>
+<h3 id="metricas-de-exito-fase-2">📊 Métricas de Éxito Fase 2<a class="headerlink" href="#metricas-de-exito-fase-2" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Métrica</th>
+<th>Objetivo</th>
+<th>Método de Validación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Automatización GHL</strong></td>
+<td>&gt; 90% procesos automáticos</td>
+<td>Análisis de workflows por 1 semana</td>
+</tr>
+<tr>
+<td><strong>Bot Accuracy</strong></td>
+<td>&gt; 85% respuestas correctas</td>
+<td>Testing con 100 conversaciones</td>
+</tr>
+<tr>
+<td><strong>Alert Response Time</strong></td>
+<td>&lt; 15 minutos crisis</td>
+<td>Simulación de 20 casos críticos</td>
+</tr>
+<tr>
+<td><strong>Escalation Success</strong></td>
+<td>&gt; 95% casos apropiados</td>
+<td>Revisión manual de escalaciones</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fase-3-inteligencia-del-sistema-4-semanas">Fase 3: Inteligencia del Sistema (4 semanas)<a class="headerlink" href="#fase-3-inteligencia-del-sistema-4-semanas" title="Permanent link">¶</a></h2>
+<h3 id="objetivo-principal_2">🎯 Objetivo Principal<a class="headerlink" href="#objetivo-principal_2" title="Permanent link">¶</a></h3>
+<p>Integrar capacidades avanzadas de gestión de citas, análisis predictivo y generación de reportes automáticos.</p>
+<h3 id="entregables-clave_2">📋 Entregables Clave<a class="headerlink" href="#entregables-clave_2" title="Permanent link">¶</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><input id="__tabbed_3_3" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Semana 9-10: Google Calendar Sync</label><label for="__tabbed_3_2">Semana 10-11: Evaluación Automática</label><label for="__tabbed_3_3">Semana 11-12: Reportes y Analytics</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong>Tareas</strong>:
+- [ ] Configurar Google Calendar API
+- [ ] Implementar sincronización bidireccional
+- [ ] Crear gestión automática de disponibilidad
+- [ ] Configurar tipos de citas y duraciones
+- [ ] Implementar manejo de conflictos</p>
+<p><strong>Criterios de Aceptación</strong>:
+- ✅ Sincronización en tiempo real &lt; 30 segundos
+- ✅ Zero conflictos de horarios
+- ✅ Disponibilidad actualizada automáticamente
+- ✅ 5 tipos de citas configuradas correctamente</p>
+</div>
+<div class="tabbed-block">
+<p><strong>Tareas</strong>:
+- [ ] Implementar algoritmos de evaluación PHQ-9
+- [ ] Crear sistema de scoring AUDIT
+- [ ] Desarrollar matriz de riesgo automática
+- [ ] Configurar asignación inteligente de profesionales
+- [ ] Implementar recomendaciones de tratamiento</p>
+<p><strong>Criterios de Aceptación</strong>:
+- ✅ Evaluación automática 95% precisión vs. manual
+- ✅ Asignación profesional apropiada &gt; 90%
+- ✅ Recomendaciones basadas en evidencia
+- ✅ Tiempo de evaluación &lt; 2 minutos</p>
+</div>
+<div class="tabbed-block">
+<p><strong>Tareas</strong>:
+- [ ] Crear dashboard de métricas en tiempo real
+- [ ] Implementar reportes automáticos diarios
+- [ ] Configurar analytics de uso del sistema
+- [ ] Crear reportes de compliance médico
+- [ ] Implementar alertas de performance</p>
+<p><strong>Criterios de Aceptación</strong>:
+- ✅ Dashboard actualizado cada 5 minutos
+- ✅ Reportes automáticos 100% precisos
+- ✅ Analytics históricos disponibles
+- ✅ Compliance reports generados automáticamente</p>
+</div>
+</div>
+</input></input></input></div>
+<h3 id="metricas-de-exito-fase-3">📊 Métricas de Éxito Fase 3<a class="headerlink" href="#metricas-de-exito-fase-3" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Métrica</th>
+<th>Objetivo</th>
+<th>Método de Validación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Calendar Sync</strong></td>
+<td>100% sincronización</td>
+<td>Testing con 50 citas simultáneas</td>
+</tr>
+<tr>
+<td><strong>Risk Assessment</strong></td>
+<td>&gt; 95% precisión</td>
+<td>Validación con equipo médico</td>
+</tr>
+<tr>
+<td><strong>Report Accuracy</strong></td>
+<td>100% datos correctos</td>
+<td>Auditoría de 200 reportes</td>
+</tr>
+<tr>
+<td><strong>System Performance</strong></td>
+<td>&lt; 3 seg response time</td>
+<td>Monitoring automatizado</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fase-4-optimizacion-y-lanzamiento-5-semanas">Fase 4: Optimización y Lanzamiento (5 semanas)<a class="headerlink" href="#fase-4-optimizacion-y-lanzamiento-5-semanas" title="Permanent link">¶</a></h2>
+<h3 id="objetivo-principal_3">🎯 Objetivo Principal<a class="headerlink" href="#objetivo-principal_3" title="Permanent link">¶</a></h3>
+<p>Capacitar al equipo, realizar pruebas con pacientes reales y optimizar el sistema basado en feedback real antes del lanzamiento completo.</p>
+<h3 id="entregables-clave_3">📋 Entregables Clave<a class="headerlink" href="#entregables-clave_3" title="Permanent link">¶</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:4"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><input id="__tabbed_4_3" name="__tabbed_4" type="radio"><input id="__tabbed_4_4" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Semana 13-14: Capacitación Personal</label><label for="__tabbed_4_2">Semana 14-18: Piloto con Pacientes</label><label for="__tabbed_4_3">Semana 17-18: Optimizaciones</label><label for="__tabbed_4_4">Semana 19: Lanzamiento Completo</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong>Tareas</strong>:
+- [ ] Crear materiales de capacitación
+- [ ] Entrenar a coordinadores médicos
+- [ ] Capacitar a profesionales en el sistema
+- [ ] Entrenar a personal de recepción
+- [ ] Crear procedimientos de operación estándar</p>
+<p><strong>Criterios de Aceptación</strong>:
+- ✅ 100% del personal capacitado
+- ✅ Evaluación de conocimiento &gt; 90%
+- ✅ Procedimientos documentados y aprobados
+- ✅ Personal cómodo usando el sistema</p>
+</div>
+<div class="tabbed-block">
+<p><strong>Tareas</strong>:
+- [ ] Lanzar piloto con 50 pacientes
+- [ ] Monitorear todas las métricas clave
+- [ ] Recolectar feedback de pacientes y staff
+- [ ] Identificar puntos de mejora
+- [ ] Realizar ajustes basados en uso real</p>
+<p><strong>Criterios de Aceptación</strong>:
+- ✅ 50 pacientes completan el flujo exitosamente
+- ✅ Satisfacción de pacientes &gt; 8.5/10
+- ✅ Satisfacción del staff &gt; 8.0/10
+- ✅ Zero incidentes críticos</p>
+</div>
+<div class="tabbed-block">
+<p><strong>Tareas</strong>:
+- [ ] Implementar mejoras identificadas en piloto
+- [ ] Optimizar performance del sistema
+- [ ] Refinar mensajes y flujos conversacionales
+- [ ] Ajustar algoritmos de evaluación
+- [ ] Preparar documentación final</p>
+<p><strong>Criterios de Aceptación</strong>:
+- ✅ Todas las mejoras críticas implementadas
+- ✅ Performance optimizada &gt; 90%
+- ✅ Documentación 100% completa
+- ✅ Sistema listo para producción</p>
+</div>
+<div class="tabbed-block">
+<p><strong>Tareas</strong>:
+- [ ] Migrar a entorno de producción
+- [ ] Activar monitoreo 24/7
+- [ ] Comunicar lanzamiento a stakeholders
+- [ ] Iniciar operación completa
+- [ ] Establecer soporte continuo</p>
+<p><strong>Criterios de Aceptación</strong>:
+- ✅ Sistema operativo 24/7 sin interrupciones
+- ✅ Monitoreo automático funcionando
+- ✅ Equipo de soporte preparado
+- ✅ Proceso de mejora continua establecido</p>
+</div>
+</div>
+</input></input></input></input></div>
+<h3 id="metricas-de-exito-fase-4">📊 Métricas de Éxito Fase 4<a class="headerlink" href="#metricas-de-exito-fase-4" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Métrica</th>
+<th>Objetivo</th>
+<th>Método de Validación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Staff Competency</strong></td>
+<td>&gt; 90% evaluación</td>
+<td>Testing práctico del personal</td>
+</tr>
+<tr>
+<td><strong>Patient Satisfaction</strong></td>
+<td>&gt; 8.5/10</td>
+<td>Encuesta post-consulta</td>
+</tr>
+<tr>
+<td><strong>System Uptime</strong></td>
+<td>&gt; 99.5%</td>
+<td>Monitoring automatizado</td>
+</tr>
+<tr>
+<td><strong>Process Efficiency</strong></td>
+<td>50% reducción tiempo admin</td>
+<td>Análisis comparativo</td>
+</tr>
+</tbody>
+</table>
+<h2 id="recursos-y-personal-requerido">Recursos y Personal Requerido<a class="headerlink" href="#recursos-y-personal-requerido" title="Permanent link">¶</a></h2>
+<h3 id="equipo-de-implementacion">👥 Equipo de Implementación<a class="headerlink" href="#equipo-de-implementacion" title="Permanent link">¶</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">Equipo Técnico</label><label for="__tabbed_5_2">Equipo Médico</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong>Project Manager</strong> (1.0 FTE)
+- Coordinación general del proyecto
+- Gestión de timeline y entregables
+- Comunicación con stakeholders</p>
+<p><strong>Desarrollador Senior</strong> (1.0 FTE)
+- Integraciones técnicas
+- Desarrollo de formularios
+- Configuración de APIs</p>
+<p><strong>Especialista GoHighLevel</strong> (0.5 FTE)
+- Configuración de CRM
+- Workflows y automatizaciones
+- Reportes y analytics</p>
+<p><strong>Diseñador UX/UI</strong> (0.5 FTE)
+- Diseño de formularios
+- Experiencia de usuario móvil
+- Optimización conversacional</p>
+</div>
+<div class="tabbed-block">
+<p><strong>Coordinador Médico</strong> (0.5 FTE)
+- Validación de procesos clínicos
+- Definición de criterios de riesgo
+- Capacitación del equipo médico</p>
+<p><strong>Psicólogo Clínico</strong> (0.25 FTE)
+- Validación de instrumentos
+- Protocolos de evaluación
+- Testing con casos reales</p>
+<p><strong>Especialista en Sistemas</strong> (0.25 FTE)
+- Soporte técnico interno
+- Capacitación de usuarios
+- Documentación de procesos</p>
+</div>
+</div>
+</input></input></div>
+<h3 id="presupuesto-estimado">💰 Presupuesto Estimado<a class="headerlink" href="#presupuesto-estimado" title="Permanent link">¶</a></h3>
+<p><strong>[PENDIENTE - VALIDAR CON CLIENTE]</strong>: Presupuesto específico y autorización financiera</p>
+<table>
+<thead>
+<tr>
+<th>Categoría</th>
+<th>Costo Estimado</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Personal Técnico</strong></td>
+<td>$XX,XXX USD</td>
+<td>4.5 meses equipo técnico</td>
+</tr>
+<tr>
+<td><strong>Licencias Software</strong></td>
+<td>$X,XXX USD</td>
+<td>GoHighLevel, WhatsApp API, herramientas</td>
+</tr>
+<tr>
+<td><strong>Infraestructura</strong></td>
+<td>$X,XXX USD</td>
+<td>Servidores, hosting, seguridad</td>
+</tr>
+<tr>
+<td><strong>Capacitación</strong></td>
+<td>$X,XXX USD</td>
+<td>Materiales, tiempo del personal</td>
+</tr>
+<tr>
+<td><strong>Contingencia (15%)</strong></td>
+<td>$X,XXX USD</td>
+<td>Imprevistos y ajustes</td>
+</tr>
+<tr>
+<td><strong>TOTAL</strong></td>
+<td>$XX,XXX USD</td>
+<td>Inversión total del proyecto</td>
+</tr>
+</tbody>
+</table>
+<h2 id="riesgos-y-mitigaciones">Riesgos y Mitigaciones<a class="headerlink" href="#riesgos-y-mitigaciones" title="Permanent link">¶</a></h2>
+<h3 id="riesgos-tecnicos">⚠️ Riesgos Técnicos<a class="headerlink" href="#riesgos-tecnicos" title="Permanent link">¶</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio"/><input id="__tabbed_6_2" name="__tabbed_6" type="radio"/><input id="__tabbed_6_3" name="__tabbed_6" type="radio"/><div class="tabbed-labels"><label for="__tabbed_6_1">Riesgo Alto</label><label for="__tabbed_6_2">Riesgo Medio</label><label for="__tabbed_6_3">Riesgo Bajo</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong>Fallos en integración WhatsApp API</strong>
+- <em>Probabilidad</em>: Media
+- <em>Impacto</em>: Alto<br/>
+- <em>Mitigación</em>: Desarrollar backup con SMS y implementar monitoring continuo</p>
+</div>
+<div class="tabbed-block">
+<p><strong>Performance de GoHighLevel con alto volumen</strong>
+- <em>Probabilidad</em>: Baja
+- <em>Impacto</em>: Medio
+- <em>Mitigación</em>: Testing de carga y plan de escalamiento</p>
+</div>
+<div class="tabbed-block">
+<p><strong>Compatibilidad móvil de formularios</strong>
+- <em>Probabilidad</em>: Baja
+- <em>Impacto</em>: Medio
+- <em>Mitigación</em>: Testing extensivo en múltiples dispositivos</p>
+</div>
+</div>
+</div>
+<h3 id="riesgos-operacionales">🏥 Riesgos Operacionales<a class="headerlink" href="#riesgos-operacionales" title="Permanent link">¶</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio"/><input id="__tabbed_7_2" name="__tabbed_7" type="radio"/><div class="tabbed-labels"><label for="__tabbed_7_1">Riesgo Alto</label><label for="__tabbed_7_2">Riesgo Medio</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong>Resistencia al cambio del personal médico</strong>
+- <em>Probabilidad</em>: Media
+- <em>Impacto</em>: Alto
+- <em>Mitigación</em>: Capacitación extensiva y implementación gradual</p>
+</div>
+<div class="tabbed-block">
+<p><strong>Fallos en detección de casos críticos</strong>
+- <em>Probabilidad</em>: Baja
+- <em>Impacto</em>: Crítico
+- <em>Mitigación</em>: Testing exhaustivo y protocolos de backup manual</p>
+</div>
+</div>
+</div>
+<h2 id="criterios-de-exito-del-proyecto">Criterios de Éxito del Proyecto<a class="headerlink" href="#criterios-de-exito-del-proyecto" title="Permanent link">¶</a></h2>
+<h3 id="objetivos-cuantitativos">🎯 Objetivos Cuantitativos<a class="headerlink" href="#objetivos-cuantitativos" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Métrica</th>
+<th>Objetivo</th>
+<th>Timeline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Reducción Tiempo Administrativo</strong></td>
+<td>70% menos</td>
+<td>3 meses post-lanzamiento</td>
+</tr>
+<tr>
+<td><strong>Mejora en No-Shows</strong></td>
+<td>Reducir del 30% al 15%</td>
+<td>6 meses post-lanzamiento</td>
+</tr>
+<tr>
+<td><strong>Satisfacción del Personal</strong></td>
+<td>&gt; 8.5/10</td>
+<td>1 mes post-lanzamiento</td>
+</tr>
+<tr>
+<td><strong>Satisfacción de Pacientes</strong></td>
+<td>&gt; 8.5/10</td>
+<td>1 mes post-lanzamiento</td>
+</tr>
+<tr>
+<td><strong>Detección de Riesgo</strong></td>
+<td>100% casos críticos</td>
+<td>Inmediato</td>
+</tr>
+</tbody>
+</table>
+<h3 id="objetivos-cualitativos">🏆 Objetivos Cualitativos<a class="headerlink" href="#objetivos-cualitativos" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Mejora en calidad de atención</strong>: Información pre-organizada antes de cada sesión</li>
+<li><strong>Escalabilidad</strong>: Capacidad de atender más pacientes con mismo personal</li>
+<li><strong>Compliance</strong>: Reportes automáticos y auditoría completa</li>
+<li><strong>Modernización</strong>: UNEME-CECOSAMA como referente en digitalización</li>
+</ul>
+<hr/>
+<h2 id="checklist-de-preparacion">Checklist de Preparación<a class="headerlink" href="#checklist-de-preparacion" title="Permanent link">¶</a></h2>
+<h3 id="pre-requisitos-tecnicos">✅ Pre-Requisitos Técnicos<a class="headerlink" href="#pre-requisitos-tecnicos" title="Permanent link">¶</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Cuenta GoHighLevel Agency Pro activa</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> WhatsApp Business API aprobada</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Google Workspace con permisos Calendar API</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Dominio y hosting para formularios</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> SSL certificates y seguridad</li>
+</ul>
+<h3 id="pre-requisitos-organizacionales">✅ Pre-Requisitos Organizacionales<a class="headerlink" href="#pre-requisitos-organizacionales" title="Permanent link">¶</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Aprobación presupuestal del proyecto</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Designación de equipo interno de apoyo</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Definición de horarios y procedimientos</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Acceso a documentación clínica actual</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Autorización para cambios en procesos</li>
+</ul>
+<h3 id="pre-requisitos-legales">✅ Pre-Requisitos Legales<a class="headerlink" href="#pre-requisitos-legales" title="Permanent link">¶</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Revisión de compliance con normativas</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Aprobación de privacidad de datos</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Consentimientos informados actualizados</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"/><span class="task-list-indicator"></span></label> Protocolos de emergencia validados</li>
+</ul>
+<div class="admonition success">
+<p class="admonition-title">Inicio del Proyecto</p>
+<p>Una vez completados todos los pre-requisitos, el proyecto puede iniciar inmediatamente. El timeline total es de 19 semanas (aproximadamente 4.5 meses) para implementación completa.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Validaciones Críticas</p>
+<p><strong>[PENDIENTE - VALIDAR CON CLIENTE]</strong>: 
+- Presupuesto específico y autorización
+- Timeline exacto basado en disponibilidad del equipo
+- Definición final de roles y responsabilidades
+- Protocolos específicos de la institución</p>
+</div>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2024 UNEME-CECOSAMA. Todos los derechos reservados.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://github.com/uneme-cecosama" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</a>
+<a class="md-social__link" href="mailto:soporte@uneme-cecosama.gob.mx" rel="noopener" target="_blank" title="">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l217.6 163.2c11.4 8.5 27 8.5 38.4 0l217.6-163.2c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48zM0 176v208c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V176L294.4 339.2a63.9 63.9 0 0 1-76.8 0z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "toc.integrate", "content.code.annotate", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+</body>
+</html>
